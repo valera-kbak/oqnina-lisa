@@ -1,135 +1,90 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Огненная лиса | GitHub</title>
-    <style>
-        :root {
-            --github-black: #0d1117;
-            --github-dark: #161b22;
-            --github-gray: #21262d;
-            --github-border: #30363d;
-            --github-text: #c9d1d9;
-            --github-blue: #58a6ff;
-            --orange: #ff7b47;
-            --orange-bright: #ff5714;
-            --orange-glow: rgba(255, 87, 20, 0.4);
+.fox-container {
+                height: 400px;
+            }
         }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    
+    <div class="container">
+        <header>
+            <h1>Ночная Огненная Лиса</h1>
+            <p class="subtitle">Таинственное создание, воплощающее магию ночи и энергию огня. Мифический страж между мирами, чья шкура мерцает звездным светом, а глаза горят пламенем древних вулканов.</p>
+        </header>
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
-        }
+        <div class="main-content">
+            <div class="fox-container">
+                <div class="fox">
+                    <div class="fox-tail"></div>
+                    <div class="fox-body"></div>
+                    <div class="fox-head"></div>
+                    <div class="fox-ears"></div>
+                    <div class="fox-eyes"></div>
+                </div>
+            </div>
+            
+            <div class="info">
+                <h2>Легенда о Огненной Лисе</h2>
+                <p>Согласно древним преданиям, Ночная Огненная Лиса рождается из последнего луча заходящего солнца и первой звезды, появляющейся на вечернем небе. Она является хранителем равновесия между днем и ночью, теплом и холодом, огнем и тьмой.</p>
+                <p>Там, где проходит Огненная Лиса, расцветают ночные цветы и просыпаются светлячки. Ее появление предвещает изменение судьбы и приход важных событий.</p>
+                <p>Говорят, что тому, кто увидит Огненную Лису, откроются тайные знания и придет внезапное озарение. Но искать ее бесполезно — она появляется только тогда, когда сама считает нужным.</p>
+            </div>
+        </div>
         
-        body {
-            background-color: var(--github-black);
-            color: var(--github-text);
-            line-height: 1.5;
-        }
-        
-        .container {
-            max-width: 1012px;
-            margin: 0 auto;
-            padding: 0 16px;
-        }
-        
-        /* Header стилизация под GitHub */
-        header {
-            background-color: var(--github-dark);
-            border-bottom: 1px solid var(--github-border);
-            padding: 16px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-        
-        .logo-text {
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--orange);
-            text-shadow: 0 0 10px var(--orange-glow);
-        }
-        
-        .github-logo {
-            fill: var(--github-text);
-            width: 32px;
-            height: 32px;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 24px;
-        }
-        
-        nav a {
-            color: var(--github-text);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.2s;
-        }
-        
-        nav a:hover {
-            color: var(--orange);
-        }
-        
-        /* Hero section */
-        .hero {
-            padding: 80px 0;
-            text-align: center;
-            background: linear-gradient(to bottom, var(--github-dark), var(--github-black));
-            border-bottom: 1px solid var(--github-border);
-        }
-        
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 16px;
-            color: var(--orange);
-            text-shadow: 0 0 15px var(--orange-glow);
-        }
-        
-        .hero p {
-            font-size: 20px;
-            max-width: 700px;
-            margin: 0 auto 32px;
-            color: var(--github-text);
-        }
-        
-        .fox-container {
-            position: relative;
-            width: 300px;
-            height: 300px;
-            margin: 0 auto;
-        }
-        
-        .fire-fox {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, var(--orange-bright) 10%, transparent 70%);
-            border-radius: 50%;
-            filter: blur(20px);
-            opacity: 0.7;
-            animation: pulse 3s infinite alternate;
-        }
-        
-        .fox-silhouette {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50,15 C35,15 20,25 20,40 C20,55 30,65 40,70 C35,75 30,80 30,85 C30,90 40,95 50,95 C60,95 70,90 70,85 C70,80 65,75 60,70 C70,65 80,55 80,40 C80,25 65,15 50,15 Z' fill='%23000'/%3E%3C/svg%3E");
+        <div class="features">
+            <div class="feature">
+                <h3>Магия огня</h3>
+                <p>Огненная Лиса контролирует пламя, которое не обжигает живых существ, но может отпугнуть злые силы. Ее огонь очищает и обновляет энергию пространства.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>Связь с ночью</h3>
+                <p>Под покровом темноты ее силы многократно усиливаются. Она черпает энергию из лунного света и звездного сияния, становясь практически невидимой и неуязвимой.</p>
+            </div>
+            
+            <div class="feature">
+                <h3>Мудрость веков</h3>
+                <p>Прожившая тысячелетия, Огненная Лиса обладает знаниями, недоступными простым смертным. Она хранит секреты мироздания и историю мира.</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>© 2023 Легенда о Ночной Огненной Лисе. Все права на образ защищены.</p>
+            <p>Этот сайт создан в образовательных целях и является художественным произведением.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Создание звездного неба
+        document.addEventListener('DOMContentLoaded', function() {
+            const starsContainer = document.getElementById('stars');
+            const starsCount = 150;
+            
+            for (let i = 0; i < starsCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                // Случайные позиции и размеры
+                const size = Math.random() * 3;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const delay = Math.random() * 5;
+                
+                star.style.width = ${size}px;
+                star.style.height = ${size}px;
+                star.style.left = ${posX}%;
+                star.style.top = ${posY}%;
+                star.style.animationDelay = ${delay}s;
+                
+                starsContainer.appendChild(star);
+            }
+        });
+    </script>
+</body>
+</html>
+`
+
+Особенности реализации
