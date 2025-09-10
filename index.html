@@ -1,6 +1,278 @@
-.fox-container {
-                height: 400px;
+`html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ночная огненная лиса с изображением</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #0a0a2a, #1a1a3a, #0c0c1f);
+            color: #f0f0f0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-shadow: 0 0 15px rgba(255, 100, 0, 0.8);
+            color: #ff8c42;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            color: #e0e0e0;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .image-section {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 25px rgba(255, 100, 0, 0.4);
+            position: relative;
+            background: #1a1a2a;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .fox-image-container {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            position: relative;
+            background: #0c0c1f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .fox-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #666;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .image-placeholder i {
+            font-size: 64px;
+            margin-bottom: 15px;
+            color: #444;
+        }
+        
+        .upload-btn {
+            background: linear-gradient(to right, #ff5722, #ff8c42);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        .upload-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 100, 0, 0.4);
+}
+        
+        .info-section {
+            flex: 1;
+            min-width: 300px;
+            padding: 25px;
+            background: rgba(10, 10, 30, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 100, 0, 0.3);
+            backdrop-filter: blur(5px);
+        }
+        
+        h2 {
+            color: #ff8c42;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+            text-shadow: 0 0 10px rgba(255, 100, 0, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        h2 i {
+            font-size: 1.8rem;
+        }
+        
+        p {
+            line-height: 1.7;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 40px 0;
+            justify-content: center;
+        }
+        
+        .feature {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            background: rgba(20, 20, 40, 0.6);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(255, 100, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(255, 100, 0, 0.4);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #ff8c42;
+            margin-bottom: 15px;
+        }
+        
+        .feature h3 {
+            color: #ff8c42;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        
+        .star {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle 5s infinite;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 100, 0, 0.3);
+        }
+        
+        /* Анимации */
+        @keyframes twinkle {
+            0% { opacity: 0.2; }
+            50% { opacity: 1; }
+            100% { opacity: 0.2; }
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
             }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .content-wrapper {
+                flex-direction: column;
+            }
+            
+            .fox-image-container {
+                height: 300px;
+            }
+        }
+
+        /* Дополнительные стили для улучшения внешнего вида */
+        .legend {
+            font-style: italic;
+            color: #ff8c42;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .fire-effect {
+            height: 40px;
+            width: 100%;
+            background: linear-gradient(to right, 
+                transparent, 
+                rgba(255, 100, 0, 0.2), 
+                rgba(255, 140, 66, 0.4),
+                rgba(255, 100, 0, 0.2),
+                transparent);
+            margin: 20px 0;
+            border-radius: 50%;
+            filter: blur(3px);
         }
     </style>
 </head>
@@ -9,41 +281,62 @@
     
     <div class="container">
         <header>
-            <h1>Ночная Огненная Лиса</h1>
-            <p class="subtitle">Таинственное создание, воплощающее магию ночи и энергию огня. Мифический страж между мирами, чья шкура мерцает звездным светом, а глаза горят пламенем древних вулканов.</p>
+            <h1><i class="fas fa-fire"></i> Ночная Огненная Лиса</h1>
+<p class="subtitle">Таинственное создание, воплощающее магию ночи и энергию огня. Загрузите изображение лисы, чтобы оживить легенду!</p>
         </header>
         
-        <div class="main-content">
-            <div class="fox-container">
-                <div class="fox">
-                    <div class="fox-tail"></div>
-                    <div class="fox-body"></div>
-                    <div class="fox-head"></div>
-                    <div class="fox-ears"></div>
-                    <div class="fox-eyes"></div>
+        <div class="content-wrapper">
+            <div class="image-section">
+                <div class="fox-image-container">
+                    <div class="image-placeholder">
+                        <i class="fas fa-fox"></i>
+                        <p>Загрузите изображение огненной лисы</p>
+                    </div>
+                    <!-- Здесь будет отображаться загруженное изображение -->
                 </div>
+                
+                <input type="file" id="image-upload" accept="image/*" style="display: none;">
+                <button class="upload-btn" onclick="document.getElementById('image-upload').click()">
+                    <i class="fas fa-upload"></i> Загрузить изображение
+                </button>
+                <p class="legend">Поддерживаются форматы JPG, PNG и GIF</p>
             </div>
             
-            <div class="info">
-                <h2>Легенда о Огненной Лисе</h2>
+            <div class="info-section">
+                <h2><i class="fas fa-book"></i> Легенда о Огненной Лисе</h2>
                 <p>Согласно древним преданиям, Ночная Огненная Лиса рождается из последнего луча заходящего солнца и первой звезды, появляющейся на вечернем небе. Она является хранителем равновесия между днем и ночью, теплом и холодом, огнем и тьмой.</p>
                 <p>Там, где проходит Огненная Лиса, расцветают ночные цветы и просыпаются светлячки. Ее появление предвещает изменение судьбы и приход важных событий.</p>
                 <p>Говорят, что тому, кто увидит Огненную Лису, откроются тайные знания и придет внезапное озарение. Но искать ее бесполезно — она появляется только тогда, когда сама считает нужным.</p>
+                
+                <div class="fire-effect"></div>
+                
+                <h2><i class="fas fa-info-circle"></i> О магических свойствах</h2>
+                <p>Шкура Огненной Лисы обладает способностью поглощать лунный свет и преобразовывать его в магическую энергию. Ее хвост оставляет за собой шлейф из искр, которые превращаются в светлячков, освещающих путь заблудшим путникам.</p>
+                <p>Слезы Огненной Лисы, согласно легендам, обладают целебной силой и могут исцелять самые тяжелые раны, но заполучить их почти невозможно, ведь лиса плачет только в полнолуние и только от переизбытка счастья.</p>
             </div>
         </div>
         
         <div class="features">
             <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-fire"></i>
+                </div>
                 <h3>Магия огня</h3>
                 <p>Огненная Лиса контролирует пламя, которое не обжигает живых существ, но может отпугнуть злые силы. Ее огонь очищает и обновляет энергию пространства.</p>
             </div>
             
             <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-moon"></i>
+                </div>
                 <h3>Связь с ночью</h3>
                 <p>Под покровом темноты ее силы многократно усиливаются. Она черпает энергию из лунного света и звездного сияния, становясь практически невидимой и неуязвимой.</p>
             </div>
             
             <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
                 <h3>Мудрость веков</h3>
                 <p>Прожившая тысячелетия, Огненная Лиса обладает знаниями, недоступными простым смертным. Она хранит секреты мироздания и историю мира.</p>
             </div>
@@ -56,8 +349,7 @@
             <p>Этот сайт создан в образовательных целях и является художественным произведением.</p>
         </div>
     </footer>
-
-    <script>
+<script>
         // Создание звездного неба
         document.addEventListener('DOMContentLoaded', function() {
             const starsContainer = document.getElementById('stars');
@@ -81,10 +373,37 @@
                 
                 starsContainer.appendChild(star);
             }
+
+            // Обработка загрузки изображения
+            const imageUpload = document.getElementById('image-upload');
+            const imageContainer = document.querySelector('.fox-image-container');
+            
+            imageUpload.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    
+                    reader.onload = function(e) {
+                        // Удаляем placeholder
+                        const placeholder = imageContainer.querySelector('.image-placeholder');
+                        if (placeholder) {
+                            imageContainer.removeChild(placeholder);
+                        }
+                        
+                        // Создаем и добавляем изображение
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        img.classList.add('fox-image');
+                        img.alt = "Изображение огненной лисы";
+                        
+                        imageContainer.appendChild(img);
+                    }
+                    
+                    reader.readAsDataURL(file);
+                }
+            });
         });
     </script>
 </body>
 </html>
 `
-
-Особенности реализации
